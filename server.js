@@ -69,7 +69,7 @@ function createTemplate (data) {
                         ${heading}
                     </h3>
                     <div>
-                        Sept 23, 2017
+                        ${date}
                     </div>
                   ${content}
                 </div>
