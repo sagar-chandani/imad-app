@@ -118,9 +118,9 @@ app.get('/:articleName' , function(req , res){
      res.send(createTemplate(articles[articleName]));
 });
 
-var pool = new Pool(config); 
+
 app.get('/test-db', function(req, res){
-    
+    var pool = new Pool(config); 
     //make a select request
     
     //return a response
