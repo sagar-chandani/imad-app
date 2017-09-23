@@ -10,7 +10,7 @@ var config = {
     host : 'db.imad.hasura-app.io',
     port : '5432',
     password : process.env.DB_PASSWORD
-}
+};
 
 
 
@@ -118,6 +118,7 @@ app.get('/:articleName' , function(req , res){
      res.send(createTemplate(articles[articleName]));
 });
 
+var pool = new Pool(config); 
 
 app.get('/test-db', function(req, res){
     var pool = new Pool(config); 
