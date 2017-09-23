@@ -57,10 +57,11 @@ button.onclick = function(){
 
 //submit name
 
-var nameInput = document.getElementById('name');
-var name = nameInput.value;
+
+
 var submit = document.getElementById('submit_btn');
 submit.onclick = function(){
+
   //make a request to the serveer and send the name
       var request = new XMLHttpRequest();
     
@@ -88,8 +89,10 @@ submit.onclick = function(){
     };
   
   //Make the request
-  request.open('GET', 'http://spc1194.imad.hasura-app.io/submit-name?name=' +name ,true);
-  request.send(null);
+     var nameInput = document.getElementById('name');
+     var name = nameInput.value;
+    request.open('GET', 'http://spc1194.imad.hasura-app.io/submit-name?name=' +name ,true);
+    request.send(null);
   
   
 
