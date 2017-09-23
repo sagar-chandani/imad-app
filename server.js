@@ -1,7 +1,7 @@
 var express = require('express');
 var morgan = require('morgan');
 var path = require('path');
-var Pool= require('pg'),Pool;
+var Pool= require('pg').Pool;
 
 
 var config = {
@@ -12,7 +12,7 @@ var config = {
     password : process.env.DB_PASSWORD
 }
 
-
+var pool = new Pool(config); 
 
 
 var app = express();
@@ -118,13 +118,13 @@ app.get('/:articleName' , function(req , res){
      res.send(createTemplate(articles[articleName]));
 });
 
-var pool = new Pool(config); 
+
 app.get('/test-db', function(req, res){
     
     //make a select request
     
     //return a response
-    pool.query('SELECT * FRom test', function(err,result){
+    pool.query('SELECT * From test', function(err,result){
        if(err){
            res.status(500).send(err.toString());
        } else{
