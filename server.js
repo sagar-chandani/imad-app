@@ -9,7 +9,7 @@ var config = {
     database : 'spc1194',
     host : 'db.imad.hasura-app.io',
     port : '5432',
-    password : process.env.DB_PASSWORD
+    password : 'db-spc1194-49365'//process.env.DB_PASSWORD
 };
 
 
