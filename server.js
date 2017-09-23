@@ -12,7 +12,7 @@ var config = {
     password : process.env.DB_PASSWORD
 }
 
-var pool = new Pool(config); 
+
 
 
 var app = express();
@@ -118,7 +118,7 @@ app.get('/:articleName' , function(req , res){
      res.send(createTemplate(articles[articleName]));
 });
 
-
+var pool = new Pool(config); 
 app.get('/test-db', function(req, res){
     
     //make a select request
